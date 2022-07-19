@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import Form from "./Form";
 
-function Form() {
+function ParentComponent() {
   const [firstName, setFirstName] = useState("John");
   const [lastName, setLastName] = useState("Henry");
 
@@ -13,12 +14,13 @@ function Form() {
   }
 
   return (
-    <form>
-      <input type="text" onChange={handleFirstNameChange} value={firstName} />
-      <input type="text" onChange={handleLastNameChange} value={lastName} />
-      <button type="submit">Submit</button>
-    </form>
+    <Form
+      firstName={firstName}
+      lastName={lastName}
+      handleFirstNameChange={handleFirstNameChange}
+      handleLastNameChange={handleLastNameChange}
+    />
   );
 }
 
-export default Form;
+export default ParentComponent;
